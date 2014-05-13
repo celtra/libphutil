@@ -11,6 +11,9 @@
             "name": "Evan Priestley",
             "email": "mail@example.com"
         }
-    ]
+    ],
+    "autoload": {
+        "files": ["src/__phutil_library_init__.php"]
+    },
 }
 
