@@ -119,7 +119,6 @@ final class HTTPFuture extends BaseHTTPFuture {
     if (!$this->socket) {
       $this->stateStartTime = microtime(true);
       $this->socket = $this->buildSocket();
-      error_log('Building took ' . (microtime(true) - $this->stateStartTime));
       if (!$this->socket) {
         return $this->stateReady;
       }
@@ -164,8 +163,6 @@ final class HTTPFuture extends BaseHTTPFuture {
         throw new Exception("Failed to read socket.");
       }
     }
-    error_log('Writing took ' . (microtime(true) - $this->stateStartTime));
-
     return $this->checkSocket();
   }
 
